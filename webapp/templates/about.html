@@ -1,0 +1,32 @@
+{%extends 'layout.html' %}
+{% block content %}
+    <h1>Parking Slot</h1>
+{#    {% for post in posts %}#}
+{#       {% if post['park'] == 'info' %}#}
+{#           <p>Total: {{ post['total'] }}</p>#}
+{#           <p>Available: {{ post['available'] }}</p>#}
+{#        {% endif %}#}
+{#    {% endfor %}#}
+    {% for post in posts %}
+        {% if post['status'] == 'Parked' %}
+            <div class="oneline">
+            <div>
+                <p><strong>Position: {{ post['order'] }}</strong></p>
+                <p style="color:red;">{{ post['status'] }}</p>
+            </div>
+            </div>
+        {% elif post['status'] == 'Available' %}
+            <div class="oneline">
+                    <a href="/detail/{{post['order']}}/{{ post['parking_index']}}">
+                        <p><strong>Position: {{ post['order'] }}</strong></p>
+                        <p style="color:green;"> {{ post['status'] }}</p>
+                    </a>
+            </div>
+         {% else %}
+            <div>
+                <h3>Total: {{ post['total'] }}</h3>
+                <p><strong>Available: {{ post['available'] }}</strong></p>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

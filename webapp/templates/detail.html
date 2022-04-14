@@ -1,0 +1,7 @@
+{%extends 'layout.html' %}
+{% block content %}
+        <p><strong>Position: {{ posts['order'] }}</strong></p>
+        <p style="color:green;"> {{ posts['status'] }}</p>
+    <a>Direction</a>
+    <img src="{{url_for('static', filename=string_url)}}"/>
+{% endblock %}
