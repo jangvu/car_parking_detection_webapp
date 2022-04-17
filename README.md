@@ -3,8 +3,10 @@ A small computer vision project, using M-RCNN to detect the car parking slot, st
 There are 3 main tasks in this project: Detecting car, Checking the parking slot status, and Web App.
 
 1. Detecting car
+
  Detecting car is a popular task, so I used pre-trained model Mask_RCNN (https://github.com/matterport/Mask_RCNN)
 2. Cheking the parking slot status
+
  - In order to check if the parking slot is parked or not. I created dictionaries, which contain parking slot's status, frame, id.
  - Localizing parking slot in the frame by set_regions.py. This file helps us to draw a bounding box in each parking slot and saves the bounding box as region.p file.
  - Calculating IOU between car's bounding boxes and parking slot's bounding boxes to check whether the parking slot is parked or not. If a car's bounding box overlaps a parking slot for 10 frames, the parking slot's status will be changed to be parked
@@ -13,4 +15,5 @@ There are 3 main tasks in this project: Detecting car, Checking the parking slot
 
 
 3. Web App
+
  I used Flask framework to create website.
