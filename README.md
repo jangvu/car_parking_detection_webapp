@@ -5,6 +5,7 @@ There are 3 main tasks in this project: Detecting car, Checking the parking slot
 1. Detecting car
 
  Detecting car is a popular task, so I used pre-trained model Mask_RCNN (https://github.com/matterport/Mask_RCNN)
+ 
 2. Cheking the parking slot status
 
  - In order to check if the parking slot is parked or not. I created dictionaries, which contain parking slot's status, frame, id.
